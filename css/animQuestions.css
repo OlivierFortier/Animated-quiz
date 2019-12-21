@@ -1,0 +1,117 @@
+.expansion-lettres {
+    animation: expansionsLettres 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
+}
+
+@keyframes expansionsLettres {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rendreVisible {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.titre-page {
+    animation: rebondir 1.1s both;
+}
+
+@keyframes rebondir {
+    0% {
+        transform: scale(7);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    38% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+
+    55% {
+        transform: scale(1.5);
+        animation-timing-function: ease-in;
+    }
+
+    72% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    81% {
+        transform: scale(1.24);
+        animation-timing-function: ease-in;
+    }
+
+    89% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    95% {
+        transform: scale(1.04);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+
+
+
+.animBingbong {
+    opacity: 0;
+    animation: bingbong 1s forwards,
+        rendreVisible 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes bingbong {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
