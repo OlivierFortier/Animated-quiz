@@ -4,17 +4,23 @@ import { lesQuestions } from "./banqueQuestion.mjs";
 import { Util } from "./util.mjs";
 import { AnimHome } from "./animHome.mjs";
 
+//fonction pour créer l'animation d'acceuil
 function animAccueil() {
   //on instancie l'animation d'accueil, en spécifiant le nombre de boules (jusqu'à 20) et la fonction pour afficher les questions
   let intro = new AnimHome(20, afficheQuestion);
+
+  //on appelle les méthodes de la classe d'animation d'acceuil
   intro.creerBackground();
   intro.creerInstructions();
 }
 
 //afficher la prochaine question ou la fin du jeu
 export function afficheQuestion() {
+
+  //si on est a la fin du quizz, afficher le score
   if (quiz.finQuiz()) {
     afficheScore();
+  //sinon, afficher la prochaine question
   } else {
     // afficher question
     let element = document.getElementById("question");
@@ -22,30 +28,39 @@ export function afficheQuestion() {
     if (element.classList.contains("expansion-lettres")) {
       element.classList.remove("expansion-lettres");
     }
+    //mettre un micro-délai pour que la classe css d'animation se réinitialise après l'avoir enlevée
     setTimeout(() => {
       element.classList.add("expansion-lettres");
     }, 0);
     document.querySelector("#quiz > h1").classList.add("titre-page");
 
-    // afficher les choix de réponse
+    // afficher dynamiquement les choix de réponse
     let choix = quiz.getQuestionIndex().choix;
     for (let i = 0; i < choix.length; i++) {
       //créer les réponse dynamiquement
       let boutton = document.createElement("button");
       let span = document.createElement("span");
+      //affecter les id
       boutton.id = `btn${i}`;
       span.id = `choice${i}`;
+      //affecter le texte
       span.innerHTML = choix[i];
+
+      //créer la hiérarchie dans le dom
       boutton.appendChild(span);
       document.querySelector(".buttons").appendChild(boutton);
+
+      //ajouter les classes de style et d'animation
       boutton.classList.add("choix");
       if (boutton.classList.contains("animBingbong")) {
         boutton.classList.remove("animBingbong");
       }
+      //mettre un micro-délai pour que la classe css d'animation se réinitialise après l'avoir enlevée
       setTimeout(() => {
         boutton.classList.add("animBingbong");
       }, Util.AleatoireMinMax(0, 1000));
 
+      //appeler la fonction pour assigner les fonctions pour valider la bonne réponse aux boutons
       choixRep("btn" + i, choix[i]);
     }
 
@@ -85,7 +100,7 @@ function afficheScore() {
   tempsEcoule /= 1000;
   tempsEcoule = Math.round(tempsEcoule);
 
-  //afficher les scores dans la pge web
+  //afficher les scores dans la page web
   let finPartieHTML = `<h1 class='animFinScore'>Résultat</h1>`;
   finPartieHTML += `<h2 class='highScore animHighScore'>Votre meilleur score précédent : ${meilleurScore}</h2>`;
   finPartieHTML += `<h2 id='score' class='animScore'> Votre score : ${quiz.score}</h2>`;
@@ -104,6 +119,7 @@ function afficheScore() {
 // j'ajoute les questions instanciées dans un tableau pour pouvoir utiliser la méthode ordrealéatoire de ma classe Util pour changer l'ordre
 let questions = new Array();
 
+//instancier les questions dynamiquement
 for (let num = 0; num < lesQuestions.listeQuestions.length; num++) {
   questions.push(
     new Question(
@@ -117,7 +133,7 @@ for (let num = 0; num < lesQuestions.listeQuestions.length; num++) {
 //appeler la méthode statique de la classe Util qui permet de donner un ordre aléatoire aux questions
 Util.ordreAleatoire(questions);
 
-//rendre aléatoire l'ordre des réponses
+//rendre aléatoire l'ordre des réponses pour chaque question
 questions.forEach(question => {
   Util.ordreAleatoire(question.choix);
 });

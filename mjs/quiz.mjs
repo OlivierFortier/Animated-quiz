@@ -1,4 +1,5 @@
 export class Quiz {
+  
   constructor(questions) {
     this.score = 0;
     this.questions = questions;
@@ -12,12 +13,14 @@ export class Quiz {
 
   //méthode pour valider la bonne réponse
   choixRep(laReponse) {
+    //si c'est bon
     if (this.getQuestionIndex().bonneRep(laReponse)) {
       this.score++;
       const son = new Audio('./audio/sonGagner.wav');
       son.volume = 0.50;
       son.play();
     }
+    //si c'est mauvais
     else {
       const son = new Audio('./audio/sonPerdre.mp3');
       son.volume = 0.50;

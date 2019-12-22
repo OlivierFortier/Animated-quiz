@@ -71,6 +71,7 @@ export class AnimHome {
 
   //méthode pour faire afficher les instructions du jeu
   creerInstructions() {
+    
     //creer une référence à l'élément du background
     const animIntro = document.querySelector(".background");
     //creer un élément h3 dans lequel on insère le message d'intro
