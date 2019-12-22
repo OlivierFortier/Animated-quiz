@@ -85,6 +85,17 @@ export class AnimHome {
     //affecter le texte a l'élément
     elmMessage.innerText = messageIntro;
 
+    //ajouter un bouton et ses animations et ses styles à l'écran d'accueil
+    const boutonIntro = document.createElement("button");
+    boutonIntro.classList.add("choix");
+    boutonIntro.classList.add("animBingbong");
+    boutonIntro.addEventListener("animationend", () => {
+      boutonIntro.style.opacity = 1;
+    });
+    boutonIntro.style.marginTop = "10%";
+    boutonIntro.innerText = "Commencer";
+
+
     //ajouter l'animation au message d'intro
     elmMessage.classList.add("anim-messageIntro");
     elmMessage.addEventListener("animationend", () => {
@@ -93,6 +104,9 @@ export class AnimHome {
 
     //ajouter dans le html le message d'intro
     animIntro.insertBefore(elmMessage, elmSpan);
+
+    //ajouter dans le document le bouton de commencement
+    animIntro.insertBefore(boutonIntro, elmSpan);
   }
 
   //méthode pour détruire le fond quand on clique et commencer le quiz
