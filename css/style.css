@@ -9,6 +9,10 @@ body {
 }
 
 #app {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -29,6 +33,10 @@ body {
     font-size: 4rem;
     transition: all 1s;
     font-weight: 800;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -39,6 +47,10 @@ body {
 }
 
 .message-intro {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,7 +65,10 @@ body {
 }
 
 .grid {
-
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     height: auto;
@@ -82,6 +97,10 @@ body {
 
 #question {
     color: rgb(57, 231, 173) !important;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -117,6 +136,10 @@ p {
 
 .buttons {
     margin-top: 30px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -171,6 +194,10 @@ p {
 }
 
 .highScore {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     color: rgb(196, 170, 28);
@@ -189,6 +216,10 @@ p {
     align-content: center;
     transition: all 1s;
     font-family: 'Varela Round', sans-serif;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     background-color: #778897;
     width: 80%;
@@ -214,6 +245,10 @@ p {
 }
 
 #temps {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     color: rgb(219, 32, 94);
