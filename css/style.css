@@ -77,7 +77,7 @@ body {
 
 .grid h1 {
     font-family: 'Varela Round', sans-serif;
-    background-color: #57636e;
+    background-color: #af1756;
     font-size: 2rem;
     text-align: center;
     color: #ffffff;
@@ -150,12 +150,12 @@ p {
 }
 
 .choix {
-    background-color: #778897;
+    background-color: #af1756;
     width: 80%;
     max-width: 250px;
     font-size: 1.5rem;
     color: #fff;
-    border: 1px solid #1D3C6A;
+    border: 1px solid #af1756;
     border-radius: 50px;
     margin: 2%;
     padding: 3%;
@@ -221,12 +221,12 @@ p {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    background-color: #778897;
+    background-color: #af1756;
     width: 80%;
     max-width: 250px;
     font-size: 1.5rem;
     color: #fff;
-    border: 1px solid #1D3C6A;
+    border: 1px solid #af1756;
     border-radius: 50px;
     margin: 2%;
     padding: 3%;
